@@ -10,9 +10,13 @@
 }
 
 .leftboy{
-    background-color:blue;
+    /* background-color:blue; */
 }
 
 .rightboy{
-    background-color:steelblue;
+    /* background-color:steelblue; */
+}
+
+h1 {
+    text-align: left;
 }
