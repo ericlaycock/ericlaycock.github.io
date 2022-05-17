@@ -36,7 +36,7 @@ const path = window.location.pathname;
 
 window.addEventListener('DOMContentLoaded', () => {
   console.log("Path is:",path);
-    if (path.includes("index.html")){
+    if (path.includes("index.html") || path==="/"){
         console.log("Index fired")
       //call imported auth_fun
         auth_fun(createUserWithEmailAndPassword,auth);
