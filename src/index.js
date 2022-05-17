@@ -1,3 +1,4 @@
+// import {verbfun} from './verbs';
 import { initializeApp } from "firebase/app";
 import {getFirestore, collection, getDocs} from "firebase/firestore";
 import {getAuth,createUserWithEmailAndPassword} from "firebase/auth";
@@ -34,6 +35,8 @@ signupForm.addEventListener('submit',(e)=>{
 
 
 });
+
+
 
 
 

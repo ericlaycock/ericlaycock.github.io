@@ -1,3 +1,5 @@
+// const verbfun = () => {
+
 const leftcol = document.querySelector('.leftboy');
 const content = document.querySelector('.rightboy');
 
@@ -118,4 +120,8 @@ leftcol.addEventListener('click',e=>{
     else if(e.target.classList.contains('subj_impf')){content.innerHTML = embed_subj_impf;}
     else if(e.target.classList.contains('subj_perf')){content.innerHTML = embed_subj_perf;}    
 
-});
+})
+
+// };
+
+// export {verbfun}; 

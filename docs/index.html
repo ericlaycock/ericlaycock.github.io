@@ -5,20 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Login - Pineapple Spanish Members' Area </title>
 </head>
 <body>
-    <div class="container">
+    <div class="container mx-1">
 
-        <h1> Login or signup to get started </h1>
-        <div class="input-group input-group- mb-3">
+        <!-- contains page element -->
+        <div class="container col-4">
+            <img src="./assets/default_logo.png">
 
-        <form class="mb-3 col-3 signup">
-           <input class="form-control form-control-lg" type="email" placeholder="Your email" aria-label=".form-control-lg example" id="email">
-            <input class="form-control form-control-lg" type="password" placeholder="Your password" aria-label=".form-control-lg example" id="password">
-            <button>signup</button>
-        </form>
-    
+        </div>
+
+
+        
+        <div class="row">
+
+
+            <div class="col-3"></div>
+            <form class="mb-3 col-6 signup">
+                    <input class="form-control row my-2" type="email" placeholder="Your email" aria-label=".form-control-lg example" id="email">
+                    <input class="form-control row" type="password" placeholder="Your password" aria-label=".form-control-lg example" id="password">
+
+                    <button class="my-3">signup</button>
+            </form>
+            <div class="col-3"></div>
+         </div>
         <a href="./verbs.html">Click here to go to verbs</a>
     </div>
     
