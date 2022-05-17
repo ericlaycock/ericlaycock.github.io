@@ -1,6 +1,16 @@
 const auth_fun = (createUserWithEmailAndPassword,auth) => {
 
-    const signupForm = document.querySelector('.signup');
+    const signupForm = document.querySelector('.login100-form');
+    console.log(signupForm)
+
+    //TODO: add login functionality
+
+    //TODO: add onAuthStateChanged state changed
+
+    //TODO: add Google login functionality
+
+    //TODO: add Google create account functionality
+
 
     signupForm.addEventListener('submit',(e)=>{
         e.preventDefault();
@@ -9,12 +19,14 @@ const auth_fun = (createUserWithEmailAndPassword,auth) => {
         const pw = signupForm.password.value;
 
         createUserWithEmailAndPassword(auth,em,pw)
-        .then(cred => console.log('user created:',cred.user))
-        .catch(err=>console.log(err.message)); 
-
-
+        .then(cred => {
+            console.log('user created:',cred.user)
+            window.location.href = "./verbs.html";    
+        })
+        .catch(err=>console.log(err.message));
     })
 };
+
 
 
 export {auth_fun};
