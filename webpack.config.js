@@ -7,6 +7,11 @@ module.exports = {
         path: path.resolve(__dirname,'docs/assets'),
         filename: 'bundle.js'
     },
+    entry: './src/verbs.js', 
+    output: {
+        path: path.resolve(__dirname,'docs/assets'),
+        filename: 'bundle_verbs.js'
+    },
     devServer: {
         contentBase: path.resolve(__dirname,'docs'),
         publicPath: '/assets'
@@ -26,6 +31,7 @@ module.exports = {
             test: /\.css$/,
             use: ['style-loader','css-loader']
     }]
-    }
+    },
+
 };
 
