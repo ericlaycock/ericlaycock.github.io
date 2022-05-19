@@ -13,11 +13,12 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
 import {getAuth,createUserWithEmailAndPassword,
         signInWithEmailAndPassword,
-        signInWithPopup, GoogleAuthProvider} from "firebase/auth";
+        signInWithPopup, GoogleAuthProvider,
+    onAuthStateChanged,FacebookAuthProvider} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCS5E0sntq5dN0g7FlW0B69dhwJp_3f-b8",
-  authDomain: "pineapplespanish-ff90a.firebaseapp.com",
+  authDomain: "app.pineapplespanish.com",
   projectId: "pineapplespanish-ff90a",
   storageBucket: "pineapplespanish-ff90a.appspot.com",
   messagingSenderId: "237714081439",
@@ -36,14 +37,17 @@ const db = getFirestore(app);
 
 const path = window.location.pathname;
 
+onAuthStateChanged(auth,user=>console.log("User updated: ",user));
+
 window.addEventListener('DOMContentLoaded', () => {
   console.log("Path is:",path);
-    if (path.includes("index.html") || path==="/"){
+    if (path.includes("index.html") || path==="/" || path.includes("createaccount.html")){
         console.log("Index fired")
       //call imported auth_fun
         auth_fun(createUserWithEmailAndPassword,auth,
             signInWithEmailAndPassword,
-            signInWithPopup,GoogleAuthProvider);
+            signInWithPopup,GoogleAuthProvider,
+            FacebookAuthProvider);
       //execute weird-ass jquery function
      
 // (function ($) {

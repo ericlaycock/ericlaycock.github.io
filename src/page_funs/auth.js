@@ -1,4 +1,4 @@
-import { fetchSignInMethodsForEmail } from "firebase/auth";
+import { FacebookAuthProvider, fetchSignInMethodsForEmail } from "firebase/auth";
 
 const auth_fun = (createUserWithEmailAndPassword,auth,
     signInWithEmailAndPassword,
@@ -6,6 +6,7 @@ const auth_fun = (createUserWithEmailAndPassword,auth,
 
     const loginForm = document.querySelector('.login100-form');
     const g_signin = document.querySelector('.g_signin');
+    const f_signin = document.querySelector('.f_signin');
 
     console.log("Auth is running");
 
@@ -23,9 +24,8 @@ const auth_fun = (createUserWithEmailAndPassword,auth,
             .catch(err=>console.log("Error:",err.message));
 
         });
-    //TODO: add onAuthStateChanged state changed
 
-    //TODO: add Google login functionality
+    //2. Google Sign-in/Create-Account
     console.log(g_signin);
         g_signin.addEventListener('click', e => {
             console.log("g_signin 1");
@@ -57,10 +57,41 @@ const auth_fun = (createUserWithEmailAndPassword,auth,
                  // ...
          });
         });
+
+    // 3. Facebook Sign-in/Login Functionality
+
+    console.log(g_signin);
+        f_signin.addEventListener('click', e => {
+            console.log("f_signin 1");
+
+            e.preventDefault();
+
+            const provider = new FacebookAuthProvider();
+
+
+            signInWithPopup(auth, provider)
+            .then((result) => {
+
+
+                window.location.href = "./verbs.html";  
+
+                 // ...
+            }).catch((error) => {
+                console.log(error.message);
+                // Handle Errors here.
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                // // The email of the user's account used.
+                // const email = error.email;
+                // // The AuthCredential type that was used.
+                //  const credential = GoogleAuthProvider.credentialFromError(error);
+                 // ...
+         });
+        });
+
     
 
-
-    //TODO: add Google create account functionality
+    // TODO: add normal create account functionality
 
 
     // signupForm.addEventListener('submit',(e)=>{
