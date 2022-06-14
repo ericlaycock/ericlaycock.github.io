@@ -40,9 +40,11 @@ const path = window.location.pathname;
 onAuthStateChanged(auth,user=>console.log("User updated: ",user));
 
 window.addEventListener('DOMContentLoaded', () => {
-  console.log("Path is:",path);
+
+
+// For index.html and createaccount.html, run the auth_fun(). Every other page has seperate functionality.
     if (path.includes("index.html") || path==="/" || path.includes("createaccount.html")){
-        console.log("Index fired")
+
       //call imported auth_fun
         auth_fun(createUserWithEmailAndPassword,auth,
             signInWithEmailAndPassword,
@@ -51,6 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
     // Conditionally import and execute page-specific functions (faster page load if conditional import)
+
     else if (path.includes("verbs.html")){
         import('./page_funs/verbs')
         .then(verb_fun => verb_fun())

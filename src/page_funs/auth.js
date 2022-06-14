@@ -1,14 +1,15 @@
-import { FacebookAuthProvider, fetchSignInMethodsForEmail } from "firebase/auth";
-
 const auth_fun = (createUserWithEmailAndPassword,auth,
     signInWithEmailAndPassword,
     signInWithPopup,GoogleAuthProvider) => {
 
     const loginForm = document.querySelector('.login100-form');
+    const createForm = document.querySelector('.login100-formCA');
     const g_signin = document.querySelector('.g_signin');
-    const f_signin = document.querySelector('.f_signin');
+
 
     console.log("Auth is running");
+
+    // Steps 1 and 2 are for index.html (the login page)
 
     //1. Login functionality
         loginForm.addEventListener('submit', e => {
@@ -58,55 +59,25 @@ const auth_fun = (createUserWithEmailAndPassword,auth,
          });
         });
 
-    // 3. Facebook Sign-in/Login Functionality
 
-    console.log(g_signin);
-        f_signin.addEventListener('click', e => {
-            console.log("f_signin 1");
-
-            e.preventDefault();
-
-            const provider = new FacebookAuthProvider();
-
-
-            signInWithPopup(auth, provider)
-            .then((result) => {
-
-
-                window.location.href = "./verbs.html";  
-
-                 // ...
-            }).catch((error) => {
-                console.log(error.message);
-                // Handle Errors here.
-                // const errorCode = error.code;
-                // const errorMessage = error.message;
-                // // The email of the user's account used.
-                // const email = error.email;
-                // // The AuthCredential type that was used.
-                //  const credential = GoogleAuthProvider.credentialFromError(error);
-                 // ...
-         });
-        });
 
     
 
-    // TODO: add normal create account functionality
+    // 3. Create new account (for createaccount.html)
 
 
-    // signupForm.addEventListener('submit',(e)=>{
-    //     e.preventDefault();
+    createForm.addEventListener('submit',(e)=>{
+        e.preventDefault();
 
-    //     const em = signupForm.email.value;
-    //     const pw = signupForm.password.value;
+        const em = createForm.email.value;
+        const pw = createForm.password.value;
 
-    //     createUserWithEmailAndPassword(auth,em,pw)
-    //     .then(cred => {
-    //         console.log('user created:',cred.user)
-    //         window.location.href = "./verbs.html";    
-    //     })
-    //     .catch(err=>console.log(err.message));
-//     })
+        createUserWithEmailAndPassword(auth,em,pw)
+        .then(cred => {
+            window.location.href = "./verbs.html";    
+        })
+        .catch(err=>console.log(err.message));
+    })
 };
 
 
