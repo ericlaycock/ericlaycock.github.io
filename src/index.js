@@ -1,20 +1,14 @@
 // 1. Import all global functions
-// import {$,jQuery} from 'jquery';
-import {auth_fun,weirdass} from './page_funs/auth';
-// import {verb_fun} from './page_funs/verbs';
-// import {bookcall_fun} from './page_funs/bookcall';
-// import {memory_fun} from './page_funs/memory';
-// import {pron_fun} from './page_funs/pron';
-// import {vocab_fun} from './page_funs/vocab';
-
+import {auth_fun,createaccount_fun, reset_fun} from './page_funs/auth';
 
 // 2. Import and initialize global firebase functionality
+import * as firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
 import {getAuth,createUserWithEmailAndPassword,
         signInWithEmailAndPassword,
         signInWithPopup, GoogleAuthProvider,
-    onAuthStateChanged,FacebookAuthProvider} from "firebase/auth";
+    onAuthStateChanged,sendPasswordResetEmail} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCS5E0sntq5dN0g7FlW0B69dhwJp_3f-b8",
@@ -42,17 +36,27 @@ onAuthStateChanged(auth,user=>console.log("User updated: ",user));
 window.addEventListener('DOMContentLoaded', () => {
 
 
-// For index.html and createaccount.html, run the auth_fun(). Every other page has seperate functionality.
-    if (path.includes("index.html") || path==="/" || path.includes("createaccount.html")){
+// For index.html, run the auth_fun(). Every other page has seperate functionality.
+    if (path.includes("index.html") || path==="/"){
 
       //call imported auth_fun
-        auth_fun(createUserWithEmailAndPassword,auth,
+        auth_fun(auth,
             signInWithEmailAndPassword,
-            signInWithPopup,GoogleAuthProvider,
-            FacebookAuthProvider);
+            signInWithPopup,GoogleAuthProvider);
 
     }
     // Conditionally import and execute page-specific functions (faster page load if conditional import)
+
+    else if(path.includes("createaccount.html")){
+        
+        createaccount_fun(auth,createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,signInWithPopup,GoogleAuthProvider);
+    }
+
+    else if(path.includes("forgot.html")){
+       
+        reset_fun(auth,sendPasswordResetEmail);
+    }
 
     else if (path.includes("verbs.html")){
         import('./page_funs/verbs')

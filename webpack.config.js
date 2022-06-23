@@ -1,10 +1,11 @@
 const path = require('path');
+const { webpack } = require('webpack');
 
 
 module.exports = {
     entry: './src/index.js', 
     output: {
-        path: path.resolve(__dirname,'docs/assets'),
+        path: path.resolve(__dirname,'docs'),
         filename: 'bundle.js'
     },
     devServer: {
@@ -27,6 +28,11 @@ module.exports = {
             use: ['style-loader','css-loader']
     }]
     },
+    // plugins: [
+    //     new webpack.optimize.LimitChunkCountPlugin({
+    //         maxChunks: 1,
+    //     }),
+    // ],
 
 };
 
