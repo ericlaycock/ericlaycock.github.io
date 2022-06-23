@@ -2,7 +2,6 @@
 import {auth_fun,createaccount_fun, reset_fun} from './page_funs/auth';
 
 // 2. Import and initialize global firebase functionality
-import * as firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
 import {getAuth,createUserWithEmailAndPassword,
@@ -59,28 +58,29 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     else if (path.includes("verbs.html")){
+
         import('./page_funs/verbs')
-        .then(verb_fun => verb_fun())
-        .catch(err=>console.log(err));
+        .then(module => module.verb_fun())
+        .catch(err=>console.log(err.message));
     }
     else if (path.includes("bookcall.html")){
         import('./page_funs/bookcall')
-        .then(bookcall_fun => bookcall_fun())
+        .then(module => module.bookcall_fun())
         .catch(err=>console.log(err));
     }
     else if (path.includes("memory.html")){
         import('./page_funs/memory')
-        .then(memory_fun=>memory_fun())
+        .then(module=>module.memory_fun())
         .catch(err=>console.log(err));
     }
     else if (path.includes("pron.html")){
         import('./page_funs/pron')
-        .then(pron_fun=>pron_fun())
+        .then(module=>module.pron_fun())
         .catch(err=>console.log(err));
     }
     else if (path.includes("vocab.html")){
         import('./page_funs/vocab')
-        .then(vocab_fun=>vocab_fun())
+        .then(module=>module.vocab_fun())
         .catch(err=>console.log(err));
     }
 

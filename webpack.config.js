@@ -12,6 +12,7 @@ module.exports = {
         contentBase: path.resolve(__dirname,'docs'),
         publicPath: '/assets'
     },
+    devtool: '#eval-source-map',
     module: {
         rules: [{
             test: /\.js$/,

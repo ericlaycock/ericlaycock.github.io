@@ -1,5 +1,6 @@
 const verb_fun = () => {
 
+    console.log("VERBS ACTIVE");
     const leftcol = document.querySelector('.leftboy');
     const content = document.querySelector('.rightboy');
 
@@ -34,6 +35,7 @@ const verb_fun = () => {
     const embed_dop2 = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/-LlPNvO3Frc" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
     const embed_dop3 = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/8eZg8bDGiDU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
     const embed_iop1 = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/jO9CR9y8qyU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
+    const embed_dopiop = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/bcd970fe24b943d4b85e9232c54175ba" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
 
     const embed_pres_perf = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/RuTuY7ZeIt0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
     const embed_pres_perf_irreg = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/vfEDC8fTRX8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
@@ -56,8 +58,11 @@ const verb_fun = () => {
     const embed_subj_trig = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/ofB7cfCMKcs" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
     const embed_subj_impf = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/uwtFPFzEz4k" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
     const embed_subj_perf = '<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.youtube.com/embed/wMe1AqKuAyg" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>';
-
+    
+    console.log("Embeds loaded");
+    
     leftcol.addEventListener('click',e=>{
+        console.log("Listener activated");
         // Present Tense
         if(e.target.classList.contains('pres_reg')){content.innerHTML = embed_pres_reg;}
         else if(e.target.classList.contains('pres_hirreg')){content.innerHTML = embed_pres_hirreg;}
@@ -93,6 +98,7 @@ const verb_fun = () => {
         else if(e.target.classList.contains('dop2')){content.innerHTML = embed_dop2;}
         else if(e.target.classList.contains('dop3')){content.innerHTML = embed_dop3;}
         else if(e.target.classList.contains('iop1')){content.innerHTML = embed_iop1;}
+        else if(e.target.classList.contains('dopiop')){content.innerHTML = embed_dopiop;}
 
         // Perf
         else if(e.target.classList.contains('pres_perf')){content.innerHTML = embed_pres_perf;}
