@@ -63,11 +63,6 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(module => module.verb_fun())
         .catch(err=>console.log(err.message));
     }
-    else if (path.includes("bookcall.html")){
-        import('./page_funs/bookcall')
-        .then(module => module.bookcall_fun())
-        .catch(err=>console.log(err));
-    }
     else if (path.includes("memory.html")){
         import('./page_funs/memory')
         .then(module=>module.memory_fun())
@@ -78,11 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(module=>module.pron_fun())
         .catch(err=>console.log(err));
     }
-    else if (path.includes("vocab.html")){
-        import('./page_funs/vocab')
-        .then(module=>module.vocab_fun())
-        .catch(err=>console.log(err));
-    }
+
 
 });
 
