@@ -1,1 +1,1 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{9:function(o,n){console.log("hi")}}]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{9:function(n,o,c){"use strict";c.r(o),c.d(o,"vocab_fun",function(){return u});var u=function(){}}}]);

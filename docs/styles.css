@@ -13,6 +13,18 @@
     background-color: yellow;
 }
 
+.btn-oran {
+    background-color: orange;
+}
+
+.videohead {
+    background-color: mediumseagreen;
+    border-radius:25px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
 .signupbox{
     background-color: rgb(214, 72, 21);
     border-radius: 25px;
@@ -24,4 +36,19 @@ h1 {
 
 .hidden123{
     display: none !important;
+}
+
+.parahead {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: medium;
+    font-weight: normal;
+}
+
+a.button{
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    background-color: orange;
 }

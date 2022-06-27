@@ -12,6 +12,7 @@ module.exports = {
         contentBase: path.resolve(__dirname,'docs'),
         publicPath: '/assets'
     },
+    // enable to improve bundle.js debugging 
     // devtool: '#eval-source-map',
     module: {
         rules: [{
