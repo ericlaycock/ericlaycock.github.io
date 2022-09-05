@@ -5,11 +5,11 @@ const { webpack } = require('webpack');
 module.exports = {
     entry: './src/index.js', 
     output: {
-        path: path.resolve(__dirname,'docs'),
+        path: path.resolve(__dirname,'./'),
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: path.resolve(__dirname,'docs'),
+        contentBase: path.resolve(__dirname,'./'),
         publicPath: '/assets'
     },
     // enable to improve bundle.js debugging 
